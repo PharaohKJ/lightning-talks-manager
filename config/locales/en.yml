@@ -29,3 +29,43 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      event: "Event"
+      lightning_talk: "Lightning Talk"
+    attributes:
+      event:
+        title: "Title"
+        description: "Description"
+        event_date: "Event Date"
+        time_limit_per_lt: "Time Limit (min)"
+        hashtag: "Hashtag"
+      lightning_talk:
+        speaker_name: "Speaker Name"
+        title: "Title"
+        duration: "Duration (min)"
+  events:
+    index:
+      title: "Events"
+      new_event: "New event"
+    show:
+      edit: "Edit"
+      back: "Back to events"
+      destroy: "Destroy"
+      confirm_destroy: "Are you sure?"
+      scan_qr: "Scan to register LT"
+      list: " List"
+      add_lt: "Add Lightning Talk"
+      no_lightning_talks: "No lightning talks registered yet"
+      share_to_x: "Share to X"
+    new:
+      title: "New Event"
+    edit:
+      title: "Editing Event"
+    form:
+      cancel: "Cancel"
+      hashtag_help: "SNS share hashtag (without #)"
+    messages:
+      created: "Event was successfully created."
+      updated: "Event was successfully updated."
+      destroyed: "Event was successfully destroyed."

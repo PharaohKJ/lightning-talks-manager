@@ -1,0 +1,11 @@
+<div id="lightning_talks" class="list-group list-group-flush"
+     data-controller="sortable"
+     data-sortable-url-value="<%= event_lightning_talk_path(event, id: ":id") %>">
+  <% if event.lightning_talks.any? %>
+    <%= render event.lightning_talks %>
+  <% else %>
+    <div class="list-group-item py-4 text-center text-muted italic">
+      <%= t("events.show.no_lightning_talks") %>
+    </div>
+  <% end %>
+</div>

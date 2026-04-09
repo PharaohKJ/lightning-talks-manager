@@ -4,8 +4,10 @@ one:
   title: MyString
   description: MyText
   event_date: 2026-03-28 09:37:10
+  time_limit_per_lt: 5
 
 two:
   title: MyString
   description: MyText
   event_date: 2026-03-28 09:37:10
+  time_limit_per_lt: 5

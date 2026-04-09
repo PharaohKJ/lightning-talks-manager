@@ -1,10 +1,43 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
 
-<%= render @event %>
+<%= turbo_stream_from @event %>
 
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <%= render @event %>
 
-  <%= button_to "Destroy this event", @event, method: :delete %>
+    <div class="card mb-4 shadow-sm border-0">
+      <div class="card-body text-center">
+        <h5 class="card-title mb-3"><%= t("events.show.scan_qr", default: "Scan to register LT") %></h5>
+        <div class="mx-auto" style="max-width: 200px;">
+          <%= qr_code_as_svg(event_url(@event)) %>
+        </div>
+        <p class="small text-muted mt-2 mb-0"><%= event_url(@event) %></p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0"><%= LightningTalk.model_name.human %><%= t("events.show.list", default: " List") %></h4>
+      </div>
+      <div id="lightning_talks_container">
+        <%= render "lightning_talks/list", event: @event %>
+      </div>
+      <div class="card-body bg-light border-top">
+        <h5 class="card-title mb-3 fw-bold"><%= t("events.show.add_lt", default: "Add Lightning Talk") %></h5>
+        <%= render "lightning_talks/form", event: @event, lightning_talk: @event.lightning_talks.build %>
+      </div>
+    </div>
+
+    <div class="d-flex gap-2 align-items-center">
+      <%= link_to t("events.show.edit"), edit_event_path(@event), class: "btn btn-outline-secondary" %>
+      <%= link_to t("events.show.back"), events_path, class: "btn btn-link" %>
+      
+      <div class="ms-auto">
+        <%= button_to t("events.show.destroy"), @event, method: :delete, class: "btn btn-outline-danger", data: { turbo_confirm: t("events.show.confirm_destroy") } %>
+      </div>
+    </div>
+  </div>
 </div>

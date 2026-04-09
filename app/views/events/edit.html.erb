@@ -1,12 +1,8 @@
-<% content_for :title, "Editing event" %>
+<% content_for :title, t("events.edit.title") %>
 
-<h1>Editing event</h1>
-
-<%= render "form", event: @event %>
-
-<br>
-
-<div>
-  <%= link_to "Show this event", @event %> |
-  <%= link_to "Back to events", events_path %>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <h1><%= t("events.edit.title") %></h1>
+    <%= render "form", event: @event %>
+  </div>
 </div>

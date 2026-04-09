@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_28_003710) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_29_074142) do
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "description"
-    t.datetime "event_date"
+    t.date "event_date"
+    t.string "hashtag"
+    t.integer "time_limit_per_lt"
     t.string "title"
     t.datetime "updated_at", null: false
   end
+
+  create_table "lightning_talks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "duration"
+    t.integer "event_id", null: false
+    t.integer "position"
+    t.string "speaker_name"
+    t.string "title"
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_lightning_talks_on_event_id"
+  end
+
+  add_foreign_key "lightning_talks", "events"
 end

@@ -2,15 +2,18 @@
   "name": "app",
   "private": "true",
   "scripts": {
-    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"npm run build:css\""
   },
   "browserslist": [
     "defaults"
   ],
   "devDependencies": {
     "sass": "^1.98.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
   }
 }

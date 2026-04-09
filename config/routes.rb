@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :events
+  resources :events do
+    resources :lightning_talks, only: [:create, :update]
+  end
   get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

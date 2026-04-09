@@ -1,0 +1,29 @@
+<%= form_with(model: [event, lightning_talk], id: "lightning_talk_form") do |f| %>
+  <% if lightning_talk.errors.any? %>
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        <% lightning_talk.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row g-3 align-items-end mb-3">
+    <div class="col-md-4">
+      <%= f.label :speaker_name, class: "form-label fw-bold" %>
+      <%= f.text_field :speaker_name, class: "form-control form-control-lg", placeholder: LightningTalk.human_attribute_name(:speaker_name) %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label :title, class: "form-label fw-bold" %>
+      <%= f.text_field :title, class: "form-control form-control-lg", placeholder: LightningTalk.human_attribute_name(:title) %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :duration, class: "form-label fw-bold" %>
+      <%= f.number_field :duration, class: "form-control form-control-lg" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t("helpers.submit.create", model: LightningTalk.model_name.human), class: "btn btn-success btn-lg w-100" %>
+    </div>
+  </div>
+<% end %>

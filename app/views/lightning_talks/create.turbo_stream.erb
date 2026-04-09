@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "lightning_talk_form" do %>
+  <%= render partial: "lightning_talks/form", locals: { event: @event, lightning_talk: @event.lightning_talks.build } %>
+<% end %>

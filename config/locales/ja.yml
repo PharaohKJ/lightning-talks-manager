@@ -1,0 +1,61 @@
+ja:
+  activerecord:
+    models:
+      event: "イベント"
+      lightning_talk: "ライトニングトーク"
+    attributes:
+      event:
+        title: "タイトル"
+        description: "説明"
+        event_date: "開催日時"
+        time_limit_per_lt: "1件あたりの時間(分)"
+        hashtag: "ハッシュタグ"
+      lightning_talk:
+        speaker_name: "登壇者名"
+        title: "タイトル"
+        duration: "持ち時間(分)"
+  events:
+    index:
+      title: "イベント一覧"
+      new_event: "新規作成"
+    show:
+      edit: "編集"
+      back: "一覧に戻る"
+      destroy: "削除"
+      confirm_destroy: "本当に削除しますか？"
+      scan_qr: "QRコードをスキャンしてLT登録"
+      list: "一覧"
+      add_lt: "ライトニングトークを追加"
+      no_lightning_talks: "まだ登録がありません"
+      share_to_x: "Xでシェア"
+    new:
+      title: "イベント新規登録"
+    edit:
+      title: "イベント編集"
+    form:
+      cancel: "キャンセル"
+      hashtag_help: "SNSシェア用のハッシュタグ（#は不要）"
+    messages:
+      created: "イベントが正常に作成されました。"
+      updated: "イベントが正常に更新されました。"
+      destroyed: "イベントが正常に削除されました。"
+  helpers:
+    submit:
+      create: "%{model}を作成"
+      update: "%{model}を更新"
+      submit: "保存"
+  errors:
+    messages:
+      blank: "を入力してください"
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      long: "%Y年%m月%d日"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%m/%d %H:%M"
+      long: "%Y年%m月%d日 %H時%m分"
+    am: "午前"
+    pm: "午後"

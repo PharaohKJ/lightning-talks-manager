@@ -1,17 +1,17 @@
-<div id="<%= dom_id event %>">
-  <div>
-    <strong>Title:</strong>
-    <%= event.title %>
+<div class="card mb-4 shadow-sm">
+  <div class="card-body py-4">
+    <h1 class="card-title fw-bold text-dark"><%= event.title %></h1>
+    <h4 class="card-subtitle mb-3 text-muted">
+      <i class="bi bi-calendar-event me-2"></i><%= l(event.event_date, format: :default) rescue event.event_date.strftime("%Y-%m-%d") %>
+      <span class="ms-3">
+        <i class="bi bi-clock me-2"></i><%= Event.human_attribute_name(:time_limit_per_lt) %>: <%= event.time_limit_per_lt %> <%= t("datetime.prompts.minute", default: "min") %>
+      </span>
+      <% if event.hashtag.present? %>
+        <span class="ms-3">
+          <i class="bi bi-hash me-1"></i><%= event.hashtag %>
+        </span>
+      <% end %>
+    </h4>
+    <p class="card-text fs-5"><%= event.description %></p>
   </div>
-
-  <div>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </div>
-
-  <div>
-    <strong>Event date:</strong>
-    <%= event.event_date %>
-  </div>
-
 </div>
