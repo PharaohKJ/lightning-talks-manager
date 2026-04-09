@@ -45,7 +45,7 @@ gem "thruster", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
-gem "rqrcode", "~> 2.2"
+gem "rqrcode", "~> 3.2"
 gem "acts_as_list"
 
 group :development, :test do
